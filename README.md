@@ -132,7 +132,7 @@ Educational project for LTUC - Luminus Technical University College
 
 ## 🤝 Contributing
 
-This is an academic project. For questions or suggestions, please contact the repository owner.
+This is an academic project. For questions or suggestions, contact me.
 
 ---
 
