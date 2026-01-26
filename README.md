@@ -41,6 +41,7 @@ Full-stack web application for managing LTUC student records with AWS RDS databa
 - ✅ Confirmation prompts for destructive actions
 
 ## 📁 Project Structure
+
 ```
 LTUC-STUDENT-APP/
 ├── index.html           # Main registration form (CREATE)
@@ -56,6 +57,7 @@ LTUC-STUDENT-APP/
 ```
 
 ## 🗄️ Database Schema
+
 ```sql
 CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -100,7 +102,7 @@ CREATE TABLE students (
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/YOUR-USERNAME/ltuc-student-app.git
+git clone https://github.com/OmarChaalan/ltuc-student-app.git
 cd ltuc-student-app
 ```
 
@@ -114,16 +116,19 @@ cp config.example.php config.php
 ```bash
 scp -i your-key.pem *.html *.css *.js *.php ubuntu@YOUR-EC2-IP:/home/ubuntu/
 ssh -i your-key.pem ubuntu@YOUR-EC2-IP
-sudo mv /home/ubuntu/*.{html,css,js,php} /var/www/html/
-sudo chown -R www-data:www-data /var/www/html
-sudo chmod -R 755 /var/www/html
+sudo mv /home/ubuntu/*.html /home/ubuntu/*.css /home/ubuntu/*.js /home/ubuntu/*.php /var/www/html/
+sudo chown www-data:www-data /var/www/html/*
+sudo chmod 644 /var/www/html/*
 ```
 
 ## 📊 Application Pages
 
-1. **Main Form** - `/` or `/index.html`
-2. **View Students** - `/view_students.php`
-3. **Process Form** - `/process.php` (POST only)
+1. **Main Form (CREATE)** - `/` or `/index.html`
+2. **View Students (READ)** - `/view_students.php`
+3. **Edit Student (UPDATE)** - `/edit_student.php?id={student_id}`
+4. **Delete Student (DELETE)** - `/delete_student.php?id={student_id}`
+5. **Process Form** - `/process.php` (POST only)
+6. **Update Form** - `/update_student.php` (POST only)
 
 ## 👨‍💻 Development
 
@@ -132,6 +137,7 @@ This project was developed as part of a cloud computing course assignment, demon
 - AWS infrastructure setup
 - Database integration
 - Security best practices
+- Complete CRUD operations
 
 ## 📝 License
 
@@ -153,5 +159,8 @@ This project is deployed on AWS Academy Learner Lab, which has the following lim
 
 For persistent deployment, consider using a standard AWS account with an Elastic IP address.
 
+---
+
 **Developed by:** Omar Chaalan  
-**Course:** Cloud Computing - Public and Private Cloud
+**Course:** Cloud Computing - Public and Private Cloud  
+**Institution:** Luminus Technical University College (LTUC)
