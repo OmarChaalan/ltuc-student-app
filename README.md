@@ -5,7 +5,7 @@ Full-stack web application for managing LTUC student records with AWS RDS databa
 ## 🌐 Live Demo
 **URL:** http://44.199.254.148
 
-> ⚠️ **Note:** This application is hosted on AWS Academy Learner Lab. The public IP address may change when the lab environment is restarted. If the link doesn't work, the lab session may have ended.
+> ⚠️ **Note:** This application is hosted on AWS Academy Learner Lab. The public IP address changes when the lab environment is restarted. If the link doesn't work, the lab session may have ended.
 
 ## 🛠️ Technologies Used
 
