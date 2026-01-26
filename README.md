@@ -21,7 +21,7 @@ Full-stack web application for managing LTUC student records with AWS RDS databa
 ### Infrastructure
 - **AWS EC2** - Ubuntu Server hosting Apache + PHP
 - **AWS RDS** - MySQL database (Sandbox template)
-- **AWS VPC** - Custom VPC with public and private subnets
+- **AWS VPC** - Custom VPC with 1 public subnet and 2 private subnets
 - **Security Groups** - Configured for EC2 (HTTP/SSH) and RDS (MySQL)
 
 ## ✨ Features
