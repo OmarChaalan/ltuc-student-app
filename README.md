@@ -147,5 +147,5 @@ This project is deployed on AWS Academy Learner Lab, which has the following lim
 For persistent deployment, consider using a standard AWS account with an Elastic IP address.
 
 **Developed by:** Omar Chaalan  
-**Course:** Cloud Computing / Public and Private Cloud
+**Course:** Cloud Computing - Public and Private Cloud
 **Institution:** Luminus Technical University College (LTUC)
