@@ -148,4 +148,3 @@ For persistent deployment, consider using a standard AWS account with an Elastic
 
 **Developed by:** Omar Chaalan  
 **Course:** Cloud Computing - Public and Private Cloud
-**Institution:** Luminus Technical University College (LTUC)
