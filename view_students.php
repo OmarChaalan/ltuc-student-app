@@ -74,6 +74,39 @@ $result = $conn->query($sql);
             font-size: 0.9em;
             opacity: 0.9;
         }
+        
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .btn-edit, .btn-delete {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-edit {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-edit:hover {
+            background: #218838;
+        }
+        
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-delete:hover {
+            background: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -122,6 +155,7 @@ $result = $conn->query($sql);
                                 <th>Year</th>
                                 <th>GPA</th>
                                 <th>Registered</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -135,6 +169,12 @@ $result = $conn->query($sql);
                                     <td><?php echo htmlspecialchars($row['year']); ?></td>
                                     <td><?php echo htmlspecialchars($row['gpa']); ?></td>
                                     <td><?php echo date('Y-m-d H:i', strtotime($row['created_at'])); ?></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="edit_student.php?id=<?php echo $row['id']; ?>" class="btn-edit">Edit</a>
+                                            <a href="delete_student.php?id=<?php echo $row['id']; ?>" class="btn-delete" onclick="return confirm('Are you sure you want to delete this student?')">Delete</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php endwhile; ?>
                         </tbody>
@@ -150,7 +190,7 @@ $result = $conn->query($sql);
         </div>
 
         <footer>
-            <p>&copy; 2024 LTUC - All Rights Reserved</p>
+            <p>&copy; 2026 LTUC - All Rights Reserved</p>
         </footer>
     </div>
 </body>
