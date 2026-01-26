@@ -26,25 +26,32 @@ Full-stack web application for managing LTUC student records with AWS RDS databa
 
 ## ✨ Features
 
-- ✅ Student registration form with validation
+- ✅ **Full CRUD Operations**
+  - **CREATE:** Add new student records
+  - **READ:** View all registered students
+  - **UPDATE:** Edit existing student information
+  - **DELETE:** Remove student records
 - ✅ Real-time form validation (client-side)
 - ✅ Server-side validation and sanitization
 - ✅ Database integration with RDS MySQL
-- ✅ View all registered students
 - ✅ Calculate statistics (Total students, Average GPA)
 - ✅ Prevent duplicate student IDs
 - ✅ Responsive design
 - ✅ GPA performance categorization
+- ✅ Confirmation prompts for destructive actions
 
 ## 📁 Project Structure
 ```
 LTUC-STUDENT-APP/
-├── index.html           # Main registration form
+├── index.html           # Main registration form (CREATE)
 ├── style.css            # Styling and responsive design
 ├── script.js            # Client-side form validation
 ├── config.example.php   # Database configuration template
-├── process.php          # Form processing and database insertion
-├── view_students.php    # Display all students with statistics
+├── process.php          # Form processing and database insertion (CREATE)
+├── view_students.php    # Display all students with Edit/Delete actions (READ)
+├── edit_student.php     # Edit student form (UPDATE)
+├── update_student.php   # Process student updates (UPDATE)
+├── delete_student.php   # Delete student records (DELETE)
 └── README.md            # Project documentation
 ```
 
