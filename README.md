@@ -434,7 +434,7 @@ This is an academic project. However, suggestions and feedback are welcome!
 
 **Omar Chaalan**
 
-📧 Email: [Your Email]  
+📧 Email: omar.chaalan05@gmail.com  
 🔗 GitHub: [@OmarChaalan](https://github.com/OmarChaalan)  
 🎓 Institution: Luminus Technical University College (LTUC)
 
@@ -469,7 +469,7 @@ This project is deployed on **AWS Academy Learner Lab**, which has specific limi
 
 **Course:** Cloud Computing - Public and Private Cloud  
 **Institution:** Luminus Technical University College (LTUC)  
-**Year:** 2024-2025
+**Year:** 2026
 
 ---
 
