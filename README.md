@@ -275,27 +275,114 @@ cp config.example.php config.php
 nano config.php  # Edit with your RDS credentials
 ```
 
-3️⃣ **Deploy to EC2:**
+3️⃣ **Set up EC2 Instance:**
+
+**Connect to EC2:**
 ```bash
-# Upload files
-scp -i your-key.pem *.html *.css *.js *.php ubuntu@YOUR-EC2-IP:/home/ubuntu/
-
-# Connect to EC2
 ssh -i your-key.pem ubuntu@YOUR-EC2-IP
+```
 
-# Move files and set permissions
-sudo mv /home/ubuntu/*.html /home/ubuntu/*.css /home/ubuntu/*.js /home/ubuntu/*.php /var/www/html/
+**Install required dependencies:**
+```bash
+# Update system packages
+sudo apt update
+
+# Install Apache web server
+sudo apt install apache2 -y
+
+# Install PHP and required extensions
+sudo apt install php libapache2-mod-php php-mysql -y
+
+# Install MySQL client (for database testing)
+sudo apt install mysql-client -y
+
+# Verify installations
+php -v                    # Check PHP version
+apache2 -v                # Check Apache version
+mysql --version           # Check MySQL client version
+
+# Start and enable Apache
+sudo systemctl start apache2
+sudo systemctl enable apache2
+
+# Check Apache status
+sudo systemctl status apache2
+```
+
+**Set proper permissions for web directory:**
+```bash
+# Set ownership to current user and Apache group
+sudo chown -R $USER:www-data /var/www/html
+
+# Set directory permissions (755)
+sudo chmod -R 755 /var/www/html
+
+# Ensure Apache can read files
+sudo chmod -R 644 /var/www/html/*.{html,css,js,php}
+```
+
+4️⃣ **Deploy application files:**
+
+**From your local machine:**
+```bash
+# Navigate to project directory
+cd ltuc-student-app
+
+# Upload all files to EC2
+scp -i your-key.pem *.html *.css *.js *.php ubuntu@YOUR-EC2-IP:/home/ubuntu/
+```
+
+**Back on EC2 (SSH session):**
+```bash
+# Move files to web directory
+sudo mv /home/ubuntu/*.html /var/www/html/
+sudo mv /home/ubuntu/*.css /var/www/html/
+sudo mv /home/ubuntu/*.js /var/www/html/
+sudo mv /home/ubuntu/*.php /var/www/html/
+
+# Remove default Apache page
+sudo rm -f /var/www/html/index.html
+
+# Set correct ownership and permissions
 sudo chown www-data:www-data /var/www/html/*
 sudo chmod 644 /var/www/html/*
 
-# Restart Apache
+# Restart Apache to apply changes
 sudo systemctl restart apache2
 ```
 
-4️⃣ **Access the application:**
+5️⃣ **Test database connection (Optional):**
+```bash
+# Create a simple test file
+sudo nano /var/www/html/test_db.php
+
+# Add this content:
+# <?php
+# require_once 'config.php';
+# $conn = getDBConnection();
+# echo "Database connected successfully!";
+# $conn->close();
+# ?>
+
+# Visit: http://YOUR-EC2-IP/test_db.php
+# If successful, delete the test file:
+sudo rm /var/www/html/test_db.php
+```
+
+6️⃣ **Access the application:**
 ```
 http://YOUR-EC2-PUBLIC-IP
 ```
+
+### Installed Software Versions
+
+| Software | Version | Purpose |
+|----------|---------|---------|
+| **Ubuntu** | 22.04 LTS | Operating System |
+| **Apache** | 2.4.58 | Web Server |
+| **PHP** | 8.1.x | Backend Language |
+| **MySQL Client** | 8.0.x | Database Client |
+| **php-mysql** | 8.1.x | PHP MySQL Extension |
 
 ---
 
@@ -434,7 +521,7 @@ This is an academic project. However, suggestions and feedback are welcome!
 
 **Omar Chaalan**
 
-📧 Email: omar.chaalan05@gmail.com  
+📧 Email: [Your Email]  
 🔗 GitHub: [@OmarChaalan](https://github.com/OmarChaalan)  
 🎓 Institution: Luminus Technical University College (LTUC)
 
@@ -469,7 +556,7 @@ This project is deployed on **AWS Academy Learner Lab**, which has specific limi
 
 **Course:** Cloud Computing - Public and Private Cloud  
 **Institution:** Luminus Technical University College (LTUC)  
-**Year:** 2026
+**Year:** 2024-2025
 
 ---
 
