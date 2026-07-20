@@ -521,7 +521,7 @@ This is an academic project. However, suggestions and feedback are welcome!
 
 **Omar Chaalan**
 
-📧 Email: [Your Email]  
+📧 Email: omar.a.chaalan@gmail.com
 🔗 GitHub: [@OmarChaalan](https://github.com/OmarChaalan)  
 🎓 Institution: Luminus Technical University College (LTUC)
 
